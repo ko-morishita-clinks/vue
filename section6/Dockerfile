@@ -4,4 +4,3 @@ WORKDIR /app
 
 RUN npm install -g npm@latest
 
-CMD ["sh"]
