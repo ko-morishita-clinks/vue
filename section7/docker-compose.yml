@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  frontend:
+    build: .
+    container_name: vue-develop
+    ports:
+      - "8080:8080"
+    working_dir: /app
+    volumes:
+      - ./vuerouter:/app
+    command: sh -c "npm install && npm run serve -- --host 0.0.0.0"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_INTERVAL=1000
